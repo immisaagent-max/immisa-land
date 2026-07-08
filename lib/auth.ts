@@ -1,8 +1,11 @@
 import { cookies } from 'next/headers';
 import { createHmac } from 'crypto';
 
-const SECRET = process.env.ADMIN_SECRET ?? 'immisa-admin-secret-2026';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? 'admin123';
+if (!process.env.ADMIN_SECRET || !process.env.ADMIN_PASSWORD) {
+  throw new Error('ADMIN_SECRET and ADMIN_PASSWORD environment variables must be set');
+}
+const SECRET: string = process.env.ADMIN_SECRET;
+const ADMIN_PASSWORD: string = process.env.ADMIN_PASSWORD;
 const SESSION_COOKIE = 'immisa_admin_session';
 
 function sign(value: string) {
