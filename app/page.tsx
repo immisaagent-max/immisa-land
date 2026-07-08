@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { reportConversion } from '@/lib/gtag';
+import { useReveal } from '@/lib/useReveal';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 type Category = 'Express Entry' | 'Spousal Sponsorship' | 'Other';
 
@@ -43,22 +45,7 @@ export default function LandingPage() {
     if (cat === 'Express Entry' || cat === 'Spousal Sponsorship') setCategory(cat);
   }, []);
 
-  useEffect(() => {
-    const els = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(
-      entries => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        }
-      },
-      { threshold: 0.1 }
-    );
-    els.forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  useReveal();
 
   function scrollTo(id: string, cat?: Category) {
     if (cat) setCategory(cat);
@@ -86,15 +73,7 @@ export default function LandingPage() {
 
   return (
     <>
-      {/* HEADER */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b" style={{ borderColor: 'var(--border-lt)' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-          <Image src="/images/immisa-logo.png" alt="Immisa Immigration" width={140} height={72} style={{ objectFit: 'contain' }} priority unoptimized />
-          <a href="tel:+16474101067" className="hidden sm:flex items-center gap-2 text-sm font-bold" style={{ color: 'var(--slate-dark)' }}>
-            📞 +1 (647) 410-1067
-          </a>
-        </div>
-      </header>
+      <SiteHeader active="home" />
 
       <main className="flex-1">
         {/* HERO */}
@@ -192,7 +171,10 @@ export default function LandingPage() {
                 <li>✓ Profile optimization to raise your ranking</li>
                 <li>✓ Full application prep and submission support</li>
               </ul>
-              <button onClick={() => scrollTo('lead-form', 'Express Entry')} className="btn-outline-slate">Check My Eligibility</button>
+              <div className="flex flex-wrap gap-3 items-center">
+                <button onClick={() => scrollTo('lead-form', 'Express Entry')} className="btn-outline-slate">Check My Eligibility</button>
+                <a href="/express-entry" className="text-sm font-bold" style={{ color: 'var(--slate)' }}>Full Express Entry guide →</a>
+              </div>
             </div>
             <div className="info-card reveal">
               <h3 className="font-black text-sm uppercase tracking-wide mb-4" style={{ color: 'var(--slate)' }}>Who Should Apply</h3>
@@ -235,7 +217,10 @@ export default function LandingPage() {
                 <li>✓ Full documentation checklist and relationship evidence review</li>
                 <li>✓ Support through processing, RQs, and interviews</li>
               </ul>
-              <button onClick={() => scrollTo('lead-form', 'Spousal Sponsorship')} className="btn-outline-slate">Check My Eligibility</button>
+              <div className="flex flex-wrap gap-3 items-center">
+                <button onClick={() => scrollTo('lead-form', 'Spousal Sponsorship')} className="btn-outline-slate">Check My Eligibility</button>
+                <a href="/spousal-sponsorship" className="text-sm font-bold" style={{ color: '#b5564f' }}>Full Spousal Sponsorship guide →</a>
+              </div>
             </div>
           </div>
         </section>
@@ -304,28 +289,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer style={{ backgroundColor: 'var(--slate-darker)' }} className="text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-3 gap-8">
-          <div>
-            <Image src="/images/immisa-logo.png" alt="Immisa Immigration" width={130} height={67} style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} unoptimized />
-            <p className="text-xs text-white/50 mt-3">Regulated Canadian Immigration Consultants for your new beginning.</p>
-          </div>
-          <div className="text-sm text-white/70 space-y-1.5">
-            <p className="font-bold text-white text-xs uppercase tracking-wide mb-2">Contact</p>
-            <p>110 James Street, Suite 200<br />St. Catharines, ON, Canada, L2R 7E8</p>
-            <p><a href="tel:+16474101067" className="hover:text-white">+1 (647) 410-1067</a></p>
-            <p><a href="mailto:info@immisa.ca" className="hover:text-white">info@immisa.ca</a></p>
-          </div>
-          <div className="text-xs text-white/40 leading-relaxed">
-            <p className="font-bold text-white text-xs uppercase tracking-wide mb-2">Disclaimer</p>
-            <p>Immisa Immigration provides services through Regulated Canadian Immigration Consultants (RCIC). Information on this page is general in nature and not a guarantee of any immigration outcome.</p>
-          </div>
-        </div>
-        <div className="border-t border-white/10 py-4 text-center text-[11px] text-white/40">
-          © {new Date().getFullYear()} Immisa Immigration. All rights reserved.
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
