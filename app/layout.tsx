@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Express Entry & Spousal Sponsorship | Immisa Immigration",
   description:
-    "Regulated Canadian Immigration Consultants helping you navigate Express Entry (CRS, category-based draws) and Spousal Sponsorship. Free eligibility assessment.",
+    "Regulated Canadian Immigration Consultants helping you navigate Express Entry (CRS, category-based draws) and Spousal Sponsorship. Book a $99 consultation.",
 };
 
 const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;

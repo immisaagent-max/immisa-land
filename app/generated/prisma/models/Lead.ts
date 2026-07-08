@@ -43,6 +43,10 @@ export type LeadMinAggregateOutputType = {
   service: string | null
   category: string | null
   message: string | null
+  fundsAvailable: string | null
+  educationLevel: string | null
+  workExperience: string | null
+  languageLevel: string | null
   source: string | null
   status: string | null
   notes: string | null
@@ -59,6 +63,10 @@ export type LeadMaxAggregateOutputType = {
   service: string | null
   category: string | null
   message: string | null
+  fundsAvailable: string | null
+  educationLevel: string | null
+  workExperience: string | null
+  languageLevel: string | null
   source: string | null
   status: string | null
   notes: string | null
@@ -75,6 +83,10 @@ export type LeadCountAggregateOutputType = {
   service: number
   category: number
   message: number
+  fundsAvailable: number
+  educationLevel: number
+  workExperience: number
+  languageLevel: number
   source: number
   status: number
   notes: number
@@ -101,6 +113,10 @@ export type LeadMinAggregateInputType = {
   service?: true
   category?: true
   message?: true
+  fundsAvailable?: true
+  educationLevel?: true
+  workExperience?: true
+  languageLevel?: true
   source?: true
   status?: true
   notes?: true
@@ -117,6 +133,10 @@ export type LeadMaxAggregateInputType = {
   service?: true
   category?: true
   message?: true
+  fundsAvailable?: true
+  educationLevel?: true
+  workExperience?: true
+  languageLevel?: true
   source?: true
   status?: true
   notes?: true
@@ -133,6 +153,10 @@ export type LeadCountAggregateInputType = {
   service?: true
   category?: true
   message?: true
+  fundsAvailable?: true
+  educationLevel?: true
+  workExperience?: true
+  languageLevel?: true
   source?: true
   status?: true
   notes?: true
@@ -236,6 +260,10 @@ export type LeadGroupByOutputType = {
   service: string | null
   category: string
   message: string | null
+  fundsAvailable: string | null
+  educationLevel: string | null
+  workExperience: string | null
+  languageLevel: string | null
   source: string
   status: string
   notes: string | null
@@ -275,6 +303,10 @@ export type LeadWhereInput = {
   service?: Prisma.StringNullableFilter<"Lead"> | string | null
   category?: Prisma.StringFilter<"Lead"> | string
   message?: Prisma.StringNullableFilter<"Lead"> | string | null
+  fundsAvailable?: Prisma.StringNullableFilter<"Lead"> | string | null
+  educationLevel?: Prisma.StringNullableFilter<"Lead"> | string | null
+  workExperience?: Prisma.StringNullableFilter<"Lead"> | string | null
+  languageLevel?: Prisma.StringNullableFilter<"Lead"> | string | null
   source?: Prisma.StringFilter<"Lead"> | string
   status?: Prisma.StringFilter<"Lead"> | string
   notes?: Prisma.StringNullableFilter<"Lead"> | string | null
@@ -292,6 +324,10 @@ export type LeadOrderByWithRelationInput = {
   service?: Prisma.SortOrderInput | Prisma.SortOrder
   category?: Prisma.SortOrder
   message?: Prisma.SortOrderInput | Prisma.SortOrder
+  fundsAvailable?: Prisma.SortOrderInput | Prisma.SortOrder
+  educationLevel?: Prisma.SortOrderInput | Prisma.SortOrder
+  workExperience?: Prisma.SortOrderInput | Prisma.SortOrder
+  languageLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   source?: Prisma.SortOrder
   status?: Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -312,6 +348,10 @@ export type LeadWhereUniqueInput = Prisma.AtLeast<{
   service?: Prisma.StringNullableFilter<"Lead"> | string | null
   category?: Prisma.StringFilter<"Lead"> | string
   message?: Prisma.StringNullableFilter<"Lead"> | string | null
+  fundsAvailable?: Prisma.StringNullableFilter<"Lead"> | string | null
+  educationLevel?: Prisma.StringNullableFilter<"Lead"> | string | null
+  workExperience?: Prisma.StringNullableFilter<"Lead"> | string | null
+  languageLevel?: Prisma.StringNullableFilter<"Lead"> | string | null
   source?: Prisma.StringFilter<"Lead"> | string
   status?: Prisma.StringFilter<"Lead"> | string
   notes?: Prisma.StringNullableFilter<"Lead"> | string | null
@@ -329,6 +369,10 @@ export type LeadOrderByWithAggregationInput = {
   service?: Prisma.SortOrderInput | Prisma.SortOrder
   category?: Prisma.SortOrder
   message?: Prisma.SortOrderInput | Prisma.SortOrder
+  fundsAvailable?: Prisma.SortOrderInput | Prisma.SortOrder
+  educationLevel?: Prisma.SortOrderInput | Prisma.SortOrder
+  workExperience?: Prisma.SortOrderInput | Prisma.SortOrder
+  languageLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   source?: Prisma.SortOrder
   status?: Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -353,6 +397,10 @@ export type LeadScalarWhereWithAggregatesInput = {
   service?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
   category?: Prisma.StringWithAggregatesFilter<"Lead"> | string
   message?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
+  fundsAvailable?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
+  educationLevel?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
+  workExperience?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
+  languageLevel?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
   source?: Prisma.StringWithAggregatesFilter<"Lead"> | string
   status?: Prisma.StringWithAggregatesFilter<"Lead"> | string
   notes?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
@@ -368,6 +416,10 @@ export type LeadCreateInput = {
   service?: string | null
   category?: string
   message?: string | null
+  fundsAvailable?: string | null
+  educationLevel?: string | null
+  workExperience?: string | null
+  languageLevel?: string | null
   source?: string
   status?: string
   notes?: string | null
@@ -385,6 +437,10 @@ export type LeadUncheckedCreateInput = {
   service?: string | null
   category?: string
   message?: string | null
+  fundsAvailable?: string | null
+  educationLevel?: string | null
+  workExperience?: string | null
+  languageLevel?: string | null
   source?: string
   status?: string
   notes?: string | null
@@ -401,6 +457,10 @@ export type LeadUpdateInput = {
   service?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fundsAvailable?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educationLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  workExperience?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languageLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -418,6 +478,10 @@ export type LeadUncheckedUpdateInput = {
   service?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fundsAvailable?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educationLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  workExperience?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languageLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -435,6 +499,10 @@ export type LeadCreateManyInput = {
   service?: string | null
   category?: string
   message?: string | null
+  fundsAvailable?: string | null
+  educationLevel?: string | null
+  workExperience?: string | null
+  languageLevel?: string | null
   source?: string
   status?: string
   notes?: string | null
@@ -450,6 +518,10 @@ export type LeadUpdateManyMutationInput = {
   service?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fundsAvailable?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educationLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  workExperience?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languageLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -466,6 +538,10 @@ export type LeadUncheckedUpdateManyInput = {
   service?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fundsAvailable?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educationLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  workExperience?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languageLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -482,6 +558,10 @@ export type LeadCountOrderByAggregateInput = {
   service?: Prisma.SortOrder
   category?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  fundsAvailable?: Prisma.SortOrder
+  educationLevel?: Prisma.SortOrder
+  workExperience?: Prisma.SortOrder
+  languageLevel?: Prisma.SortOrder
   source?: Prisma.SortOrder
   status?: Prisma.SortOrder
   notes?: Prisma.SortOrder
@@ -502,6 +582,10 @@ export type LeadMaxOrderByAggregateInput = {
   service?: Prisma.SortOrder
   category?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  fundsAvailable?: Prisma.SortOrder
+  educationLevel?: Prisma.SortOrder
+  workExperience?: Prisma.SortOrder
+  languageLevel?: Prisma.SortOrder
   source?: Prisma.SortOrder
   status?: Prisma.SortOrder
   notes?: Prisma.SortOrder
@@ -518,6 +602,10 @@ export type LeadMinOrderByAggregateInput = {
   service?: Prisma.SortOrder
   category?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  fundsAvailable?: Prisma.SortOrder
+  educationLevel?: Prisma.SortOrder
+  workExperience?: Prisma.SortOrder
+  languageLevel?: Prisma.SortOrder
   source?: Prisma.SortOrder
   status?: Prisma.SortOrder
   notes?: Prisma.SortOrder
@@ -578,6 +666,10 @@ export type LeadCreateWithoutCrmLeadInput = {
   service?: string | null
   category?: string
   message?: string | null
+  fundsAvailable?: string | null
+  educationLevel?: string | null
+  workExperience?: string | null
+  languageLevel?: string | null
   source?: string
   status?: string
   notes?: string | null
@@ -594,6 +686,10 @@ export type LeadUncheckedCreateWithoutCrmLeadInput = {
   service?: string | null
   category?: string
   message?: string | null
+  fundsAvailable?: string | null
+  educationLevel?: string | null
+  workExperience?: string | null
+  languageLevel?: string | null
   source?: string
   status?: string
   notes?: string | null
@@ -625,6 +721,10 @@ export type LeadUpdateWithoutCrmLeadInput = {
   service?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fundsAvailable?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educationLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  workExperience?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languageLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -641,6 +741,10 @@ export type LeadUncheckedUpdateWithoutCrmLeadInput = {
   service?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fundsAvailable?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educationLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  workExperience?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  languageLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -659,6 +763,10 @@ export type LeadSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   service?: boolean
   category?: boolean
   message?: boolean
+  fundsAvailable?: boolean
+  educationLevel?: boolean
+  workExperience?: boolean
+  languageLevel?: boolean
   source?: boolean
   status?: boolean
   notes?: boolean
@@ -676,6 +784,10 @@ export type LeadSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   service?: boolean
   category?: boolean
   message?: boolean
+  fundsAvailable?: boolean
+  educationLevel?: boolean
+  workExperience?: boolean
+  languageLevel?: boolean
   source?: boolean
   status?: boolean
   notes?: boolean
@@ -692,6 +804,10 @@ export type LeadSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   service?: boolean
   category?: boolean
   message?: boolean
+  fundsAvailable?: boolean
+  educationLevel?: boolean
+  workExperience?: boolean
+  languageLevel?: boolean
   source?: boolean
   status?: boolean
   notes?: boolean
@@ -708,6 +824,10 @@ export type LeadSelectScalar = {
   service?: boolean
   category?: boolean
   message?: boolean
+  fundsAvailable?: boolean
+  educationLevel?: boolean
+  workExperience?: boolean
+  languageLevel?: boolean
   source?: boolean
   status?: boolean
   notes?: boolean
@@ -715,7 +835,7 @@ export type LeadSelectScalar = {
   updatedAt?: boolean
 }
 
-export type LeadOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "company" | "service" | "category" | "message" | "source" | "status" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["lead"]>
+export type LeadOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "company" | "service" | "category" | "message" | "fundsAvailable" | "educationLevel" | "workExperience" | "languageLevel" | "source" | "status" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["lead"]>
 export type LeadInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   crmLead?: boolean | Prisma.Lead$crmLeadArgs<ExtArgs>
 }
@@ -736,6 +856,10 @@ export type $LeadPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     service: string | null
     category: string
     message: string | null
+    fundsAvailable: string | null
+    educationLevel: string | null
+    workExperience: string | null
+    languageLevel: string | null
     source: string
     status: string
     notes: string | null
@@ -1173,6 +1297,10 @@ export interface LeadFieldRefs {
   readonly service: Prisma.FieldRef<"Lead", 'String'>
   readonly category: Prisma.FieldRef<"Lead", 'String'>
   readonly message: Prisma.FieldRef<"Lead", 'String'>
+  readonly fundsAvailable: Prisma.FieldRef<"Lead", 'String'>
+  readonly educationLevel: Prisma.FieldRef<"Lead", 'String'>
+  readonly workExperience: Prisma.FieldRef<"Lead", 'String'>
+  readonly languageLevel: Prisma.FieldRef<"Lead", 'String'>
   readonly source: Prisma.FieldRef<"Lead", 'String'>
   readonly status: Prisma.FieldRef<"Lead", 'String'>
   readonly notes: Prisma.FieldRef<"Lead", 'String'>

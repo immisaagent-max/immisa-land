@@ -9,6 +9,8 @@ import { LEAD_STATUSES, CATEGORIES, CATEGORY_COLORS } from '@/lib/constants';
 type Lead = {
   id: number; name: string; email: string; phone: string | null;
   company: string | null; service: string | null; category: string; message: string | null;
+  fundsAvailable: string | null; educationLevel: string | null;
+  workExperience: string | null; languageLevel: string | null;
   source: string; status: string; notes: string | null; createdAt: string;
   crmLead: { id: string } | null;
 };
@@ -280,6 +282,18 @@ export default function LeadsPage() {
                   <div className="flex justify-between"><span className="text-gray-400">Received</span><span className="font-medium">{new Date(selected.createdAt).toLocaleString()}</span></div>
                 </div>
               </div>
+
+              {(selected.fundsAvailable || selected.educationLevel || selected.workExperience || selected.languageLevel) && (
+                <div className="space-y-2">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400">Express Entry Profile</h3>
+                  <div className="bg-gray-50 rounded-lg p-3 space-y-2 text-sm">
+                    {selected.fundsAvailable && <div className="flex justify-between"><span className="text-gray-400">Settlement funds</span><span className="font-medium">{selected.fundsAvailable}</span></div>}
+                    {selected.educationLevel && <div className="flex justify-between"><span className="text-gray-400">Education</span><span className="font-medium">{selected.educationLevel}</span></div>}
+                    {selected.workExperience && <div className="flex justify-between"><span className="text-gray-400">Work experience</span><span className="font-medium">{selected.workExperience}</span></div>}
+                    {selected.languageLevel && <div className="flex justify-between"><span className="text-gray-400">Language</span><span className="font-medium">{selected.languageLevel}</span></div>}
+                  </div>
+                </div>
+              )}
 
               {selected.message && (
                 <div className="space-y-2">

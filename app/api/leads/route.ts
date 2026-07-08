@@ -29,6 +29,10 @@ export async function POST(req: NextRequest) {
       service: body.service || null,
       category,
       message: body.message || null,
+      fundsAvailable: body.fundsAvailable || null,
+      educationLevel: body.educationLevel || null,
+      workExperience: body.workExperience || null,
+      languageLevel: body.languageLevel || null,
       source,
     },
   });

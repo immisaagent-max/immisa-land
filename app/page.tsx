@@ -15,7 +15,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How is my CRS score calculated?',
-    a: 'Your Comprehensive Ranking System score is based on age, education, language ability (English/French), work experience, and factors like a valid job offer or provincial nomination. We calculate this for you during your free assessment.',
+    a: 'Your Comprehensive Ranking System score is based on age, education, language ability (English/French), work experience, and factors like a valid job offer or provincial nomination. We calculate this for you during your paid consultation.',
   },
   {
     q: "What's the difference between inland and outland spousal sponsorship?",
@@ -106,11 +106,11 @@ export default function LandingPage() {
                   <div className="text-center py-8">
                     <div className="text-4xl mb-3">✅</div>
                     <h3 className="font-black text-xl mb-2" style={{ color: 'var(--slate-dark)' }}>Thanks — we&apos;ve got your details!</h3>
-                    <p className="text-sm text-gray-500">A member of the Immisa team will reach out shortly to book your free assessment. In a hurry? Call us at <a href="tel:+16474101067" className="font-bold" style={{ color: 'var(--slate)' }}>+1 (647) 410-1067</a>.</p>
+                    <p className="text-sm text-gray-500">A member of the Immisa team will reach out shortly to confirm your $99 consultation booking. In a hurry? Call us at <a href="tel:+16474101067" className="font-bold" style={{ color: 'var(--slate)' }}>+1 (647) 410-1067</a>.</p>
                   </div>
                 ) : (
                   <>
-                    <h2 className="font-black text-xl mb-1" style={{ color: 'var(--slate-dark)' }}>Free Eligibility Assessment</h2>
+                    <h2 className="font-black text-xl mb-1" style={{ color: 'var(--slate-dark)' }}>Book Your $99 Consultation</h2>
                     <p className="text-xs text-gray-400 mb-5">Tell us a bit about your goals and we&apos;ll follow up within one business day.</p>
                     <form onSubmit={handleSubmit} className="space-y-3">
                       <div className="grid grid-cols-2 gap-2">
@@ -142,7 +142,7 @@ export default function LandingPage() {
                         className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none resize-none" />
                       {error && <p className="text-red-500 text-xs">{error}</p>}
                       <button type="submit" disabled={submitting} className="btn-coral w-full text-center" style={{ opacity: submitting ? 0.7 : 1 }}>
-                        {submitting ? 'Submitting…' : 'Get My Free Assessment'}
+                        {submitting ? 'Submitting…' : 'Book My $99 Consultation'}
                       </button>
                     </form>
                   </>
@@ -166,7 +166,7 @@ export default function LandingPage() {
                 IRCC no longer invites candidates on CRS score alone. Category-based draws — for French speakers, healthcare workers, trades, STEM professionals, and more — mean candidates who were previously on the sidelines are now getting Invitations to Apply (ITAs).
               </p>
               <ul className="space-y-2 text-sm text-gray-600 mb-6">
-                <li>✓ Free CRS score calculation &amp; profile review</li>
+                <li>✓ Full CRS score calculation &amp; profile review</li>
                 <li>✓ Category-eligibility check across all active draw streams</li>
                 <li>✓ Profile optimization to raise your ranking</li>
                 <li>✓ Full application prep and submission support</li>
@@ -212,7 +212,7 @@ export default function LandingPage() {
                 Spousal sponsorship applications are refused most often because of incomplete relationship evidence or procedural errors — not because the relationship isn&apos;t genuine. We build a complete, well-documented application from day one.
               </p>
               <ul className="space-y-2 text-sm text-gray-600 mb-6">
-                <li>✓ Free relationship &amp; eligibility assessment</li>
+                <li>✓ Complete relationship &amp; eligibility assessment</li>
                 <li>✓ Inland vs. outland strategy tailored to your situation</li>
                 <li>✓ Full documentation checklist and relationship evidence review</li>
                 <li>✓ Support through processing, RQs, and interviews</li>
@@ -253,7 +253,7 @@ export default function LandingPage() {
           <h2 className="text-2xl md:text-3xl font-black text-center mb-12 reveal" style={{ color: 'var(--slate-dark)' }}>How It Works</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Free Consultation', desc: 'Share your background and goals with our team.' },
+              { step: '01', title: '$99 Consultation', desc: 'Share your background and goals with our team.' },
               { step: '02', title: 'Eligibility Review', desc: 'We assess your CRS score or sponsorship eligibility.' },
               { step: '03', title: 'Application Prep', desc: 'We prepare a complete, well-documented application.' },
               { step: '04', title: 'Case Management', desc: 'We manage submission and follow-up through to decision.' },

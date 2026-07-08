@@ -40,7 +40,7 @@ const SS_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How long does spousal sponsorship take?',
-    a: "IRCC publishes a service standard, but actual processing time varies by stream, visa office, and application completeness — inland and outland cases have moved at different speeds depending on volume. We check current published processing times for your specific stream during your free assessment, and we build applications to avoid the delays we see most often: missing documents and inconsistent relationship evidence.",
+    a: "IRCC publishes a service standard, but actual processing time varies by stream, visa office, and application completeness — inland and outland cases have moved at different speeds depending on volume. We check current published processing times for your specific stream during your paid consultation, and we build applications to avoid the delays we see most often: missing documents and inconsistent relationship evidence.",
   },
   {
     q: 'What relationship evidence do I actually need?',
@@ -79,7 +79,7 @@ export default function SpousalSponsorshipPage() {
                 Most refusals come from incomplete relationship evidence or the wrong stream — not a genuine relationship problem. We build a complete, well-documented application from day one.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                <a href="#lead-form" className="btn-coral">Get My Free Eligibility Assessment</a>
+                <a href="#lead-form" className="btn-coral">Book My $99 Consultation</a>
                 <a href="#inland-outland" className="btn-ghost">Inland vs. Outland</a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/60">
@@ -89,7 +89,7 @@ export default function SpousalSponsorshipPage() {
               </div>
             </div>
             <div className="anim-fade-up anim-delay-2">
-              <ServiceLeadForm category="Spousal Sponsorship" title="Free Relationship &amp; Eligibility Assessment" subtitle="We'll review your situation and recommend the right stream — free, within one business day." />
+              <ServiceLeadForm category="Spousal Sponsorship" title="Book Your $99 Consultation" subtitle="We'll review your situation and recommend the right stream — confirmed within one business day." />
             </div>
           </div>
         </section>
@@ -242,7 +242,7 @@ export default function SpousalSponsorshipPage() {
             <h2 className="text-2xl md:text-3xl font-black text-center mb-12 reveal" style={{ color: 'var(--slate-dark)' }}>Your Path From Application to Approval</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { step: '01', title: 'Free Assessment', desc: 'We review your relationship, status, and timeline to recommend inland or outland.' },
+                { step: '01', title: '$99 Consultation', desc: 'We review your relationship, status, and timeline to recommend inland or outland.' },
                 { step: '02', title: 'Evidence Building', desc: 'We compile a complete relationship evidence file mapped to IRCC\'s assessment criteria.' },
                 { step: '03', title: 'Submission & OWP', desc: 'We file your sponsorship application — and the open work permit alongside it, if eligible.' },
                 { step: '04', title: 'Processing Support', desc: 'We track your case, respond to any requests, and support you through to a decision.' },

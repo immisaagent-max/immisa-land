@@ -6,7 +6,7 @@ import type { Category } from '@/lib/constants';
 
 export default function ServiceLeadForm({
   category,
-  title = 'Free Eligibility Assessment',
+  title = 'Book Your $99 Consultation',
   subtitle = "Tell us a bit about your goals and we'll follow up within one business day.",
 }: {
   category: Category;
@@ -43,7 +43,7 @@ export default function ServiceLeadForm({
         <div className="text-center py-8">
           <div className="text-4xl mb-3">✅</div>
           <h3 className="font-black text-xl mb-2" style={{ color: 'var(--slate-dark)' }}>Thanks — we&apos;ve got your details!</h3>
-          <p className="text-sm text-gray-500">A member of the Immisa team will reach out shortly to book your free assessment. In a hurry? Call us at <a href="tel:+16474101067" className="font-bold" style={{ color: 'var(--slate)' }}>+1 (647) 410-1067</a>.</p>
+          <p className="text-sm text-gray-500">A member of the Immisa team will reach out shortly to confirm your $99 consultation booking. In a hurry? Call us at <a href="tel:+16474101067" className="font-bold" style={{ color: 'var(--slate)' }}>+1 (647) 410-1067</a>.</p>
         </div>
       ) : (
         <>
@@ -64,7 +64,7 @@ export default function ServiceLeadForm({
               className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none resize-none" />
             {error && <p className="text-red-500 text-xs">{error}</p>}
             <button type="submit" disabled={submitting} className="btn-coral w-full text-center" style={{ opacity: submitting ? 0.7 : 1 }}>
-              {submitting ? 'Submitting…' : 'Get My Free Assessment'}
+              {submitting ? 'Submitting…' : 'Book My $99 Consultation'}
             </button>
           </form>
         </>

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import ServiceLeadForm from '@/components/ServiceLeadForm';
+import ExpressEntryLeadForm from '@/components/ExpressEntryLeadForm';
 import { useReveal } from '@/lib/useReveal';
 
 const CRS_FACTORS = [
@@ -59,11 +59,11 @@ const EE_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How is my CRS score calculated?',
-    a: 'The Comprehensive Ranking System scores four core areas — age, education, official language ability, and Canadian/foreign work experience — plus skill-transferability combinations and additional points for provincial nomination, a valid job offer, French proficiency, sibling in Canada, or a Canadian credential. We calculate this precisely during your free assessment and identify which additional points you may be missing.',
+    a: 'The Comprehensive Ranking System scores four core areas — age, education, official language ability, and Canadian/foreign work experience — plus skill-transferability combinations and additional points for provincial nomination, a valid job offer, French proficiency, sibling in Canada, or a Canadian credential. We calculate this precisely during your paid consultation and identify which additional points you may be missing.',
   },
   {
     q: 'What CRS score do I need?',
-    a: "It depends entirely on the round type and timing — general draws, category draws, and CEC/PNP-specific draws all cut off at different scores, and those scores move with every round. Rather than quote a number that will be outdated by the time you read this, we check the current cut-off trends for your specific profile during your free assessment.",
+    a: "It depends entirely on the round type and timing — general draws, category draws, and CEC/PNP-specific draws all cut off at different scores, and those scores move with every round. Rather than quote a number that will be outdated by the time you read this, we check the current cut-off trends for your specific profile during your consultation.",
   },
   {
     q: "I don't think my CRS score is high enough — is it still worth applying?",
@@ -102,17 +102,17 @@ export default function ExpressEntryPage() {
                 IRCC no longer selects on CRS score alone. French-language ability, healthcare, STEM, and trades occupations are getting Invitations to Apply at scores general draws would reject. We check every active pathway against your profile.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                <a href="#lead-form" className="btn-coral">Get My Free CRS Assessment</a>
+                <a href="#lead-form" className="btn-coral">Book My $99 Consultation</a>
                 <a href="#categories" className="btn-ghost">See Active Categories</a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/60">
                 <span>✓ RCIC Regulated</span>
-                <span>✓ Free CRS Calculation</span>
+                <span>✓ Full CRS &amp; Category Review</span>
                 <span>✓ Every Active Category Checked</span>
               </div>
             </div>
             <div className="anim-fade-up anim-delay-2">
-              <ServiceLeadForm category="Express Entry" title="Free CRS Score &amp; Category Assessment" subtitle="We'll calculate your CRS score and check it against every active draw category — free, within one business day." />
+              <ExpressEntryLeadForm />
             </div>
           </div>
         </section>
@@ -164,7 +164,7 @@ export default function ExpressEntryPage() {
                 <li>✓ Educational Credential Assessment (ECA) guidance</li>
                 <li>✓ Language test strategy (IELTS/CELPIP/TEF/TCF)</li>
               </ul>
-              <a href="#lead-form" className="btn-outline-slate">Calculate My CRS Score</a>
+              <a href="#lead-form" className="btn-outline-slate">Book My $99 Consultation</a>
             </div>
             <div className="info-card reveal">
               <h3 className="font-black text-sm uppercase tracking-wide mb-4" style={{ color: 'var(--slate)' }}>CRS Factors at a Glance</h3>
@@ -205,7 +205,7 @@ export default function ExpressEntryPage() {
               ))}
             </div>
             <div className="note reveal mt-8 text-center text-xs text-gray-400 max-w-2xl mx-auto">
-              CRS cut-offs and which categories IRCC is actively running shift with every round. Rather than quote figures that could be outdated by the time you read this, we check the live picture against your profile during your free assessment.
+              CRS cut-offs and which categories IRCC is actively running shift with every round. Rather than quote figures that could be outdated by the time you read this, we check the live picture against your profile during your paid consultation.
             </div>
           </div>
         </section>
@@ -237,7 +237,7 @@ export default function ExpressEntryPage() {
             <h2 className="text-2xl md:text-3xl font-black text-center mb-12 reveal" style={{ color: 'var(--slate-dark)' }}>Your Path From Profile to PR</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { step: '01', title: 'Free CRS Assessment', desc: 'We calculate your score and check every active category against your profile.' },
+                { step: '01', title: '$99 CRS Consultation', desc: 'We calculate your score and check every active category against your profile.' },
                 { step: '02', title: 'Profile Optimization', desc: 'ECA, language testing, and profile strategy to raise your ranking before you enter the pool.' },
                 { step: '03', title: 'ITA & Application', desc: 'Once invited, we prepare a complete application within IRCC\'s 6-month service standard.' },
                 { step: '04', title: 'Decision & Landing', desc: 'We manage follow-up requests and support you through to a final decision.' },
