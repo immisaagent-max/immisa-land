@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Lead {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  service   String?
+  category  String   @default("Other")
+  message   String?
+  source    String   @default("landing")
+  status    String   @default("New")
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  crmLead   CrmLead?
+}
+
+model CrmLead {
+  id           String    @id @default(cuid())
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  contactName  String
+  orgName      String?
+  orgWebsite   String?
+  mobile1      String?
+  mobile2      String?
+  email1       String?
+  email2       String?
+  address      String?
+  segment      String    @default("Other")
+  stage        String    @default("New")
+  source       String    @default("manual")
+  notes        String?
+  assignedToId String?
+  assignedTo   CrmUser?  @relation(fields: [assignedToId], references: [id])
+  callLogs     CallLog[]
+  originLeadId Int?      @unique
+  originLead   Lead?     @relation(fields: [originLeadId], references: [id])
+}
+
+model CrmUser {
+  id         String    @id @default(cuid())
+  createdAt  DateTime  @default(now())
+  name       String
+  email      String    @unique
+  password   String
+  role       String    @default("agent")
+  active     Boolean   @default(true)
+  department String    @default("Immigration")
+  leads      CrmLead[]
+  callLogs   CallLog[]
+}
+
+model CallLog {
+  id           String    @id @default(cuid())
+  createdAt    DateTime  @default(now())
+  leadId       String
+  lead         CrmLead   @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  agentId      String
+  agent        CrmUser   @relation(fields: [agentId], references: [id])
+  outcome      String
+  notes        String?
+  nextFollowUp DateTime?
+}
+
+model ApiKey {
+  id        Int      @id @default(autoincrement())
+  name      String
+  key       String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
